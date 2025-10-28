@@ -1,0 +1,98 @@
+# === Bases de Données avec Docker - .gitignore ===
+
+# Dossiers de données Docker (ne pas versionner les données de BDD)
+data/
+*/data/
+**/data/
+
+# Fichiers de configuration avec mots de passe
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+
+# Fichiers de backup de bases de données
+*.sql
+*.dump
+*.backup
+*.bak
+*.csv
+*.json.backup
+
+# Logs Docker et applications
+*.log
+logs/
+*/logs/
+**/logs/
+
+# Certificats et clés privées
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+certs/
+*/certs/
+**/certs/
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Éditeurs de code
+.vscode/
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+
+# Fichiers système
+.directory
+desktop.ini
+
+# Fichiers de développement locaux
+docker-compose.override.yml
+docker-compose.local.yml
+docker-compose.dev.yml
+
+# Volumes Docker locaux (si bind mounts)
+volumes/
+*/volumes/
+**/volumes/
+
+# Fichiers de cache
+__pycache__/
+*.pyc
+.cache/
+node_modules/
+
+# Fichiers de documentation temporaires
+*.draft.md
+*.wip.md
+*.todo.md
+
+# Exemples de configuration personnalisés (à ne pas partager)
+my-custom-config/
+personal-examples/
+
+# Fichiers de tests locaux
+test-data/
+*/test-data/
+**/test-data/
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Ignorés mais créés lors des tests
+.test-results/
+coverage/
