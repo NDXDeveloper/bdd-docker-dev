@@ -249,7 +249,7 @@ L'interface pgAdmin est organisée en 3 zones :
 
 ```
 ┌────────────────────────────────────────────────────┐
-│  [Menu Bar]  Dashboard | Tools | Help             │
+│  [Menu Bar]  Dashboard | Tools | Help              │
 ├──────────┬─────────────────────────────────────────┤
 │          │                                         │
 │  Object  │         Main Panel                      │

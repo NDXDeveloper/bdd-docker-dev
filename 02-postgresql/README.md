@@ -69,9 +69,10 @@
 | Applications web complexes | Besoin de simplicité extrême (→ SQLite) |
 | Intégrité des données critique | Besoin de schéma ultra-flexible (→ MongoDB) |
 | Requêtes analytiques avancées | Cache haute performance (→ Redis) |
-| Support JSON/NoSQL hybride | Applications Microsoft .NET (→ MS SQL) |
+| Support JSON/NoSQL hybride | Dépendance forte aux features T-SQL spécifiques |
 | Géolocalisation (+ PostGIS) | Très petits projets embarqués |
-| Conformité SQL stricte requise | - |
+| Conformité SQL stricte requise | Infrastructure Azure 100% Microsoft requise |
+| Compatible .NET (EF Core, Npgsql) | Équipe uniquement formée à MS SQL Server |
 
 ---
 
@@ -145,19 +146,19 @@ Guide 2.2 (Config avancée) → Guide 2.3 (IP fixe) → Guide 2.4 (Utilisateurs)
 ┌─────────────────────────────────────────┐
 │           Votre Machine (Hôte)          │
 │                                         │
-│  ┌───────────────────────────────────┐ │
-│  │   Docker Container: postgres_dev  │ │
-│  │                                   │ │
-│  │   PostgreSQL 15                   │ │
-│  │   Port: 5432 → 5432              │ │
-│  │   Volume: ./data → /var/lib/...  │ │
-│  │   Réseau: bridge (défaut)        │ │
-│  └───────────────────────────────────┘ │
+│  ┌───────────────────────────────────┐  │
+│  │   Docker Container: postgres_dev  │  │
+│  │                                   │  │
+│  │   PostgreSQL 15                   │  │
+│  │   Port: 5432 → 5432               │  │
+│  │   Volume: ./data → /var/lib/...   │  │
+│  │   Réseau: bridge (défaut)         │  │
+│  └───────────────────────────────────┘  │
 │              ↕                          │
-│  ┌───────────────────────────────────┐ │
-│  │   Client SQL (pgAdmin, DBeaver)  │ │
-│  │   localhost:5432                  │ │
-│  └───────────────────────────────────┘ │
+│  ┌───────────────────────────────────┐  │
+│  │   Client SQL (pgAdmin, DBeaver)   │  │
+│  │   localhost:5432                  │  │
+│  └───────────────────────────────────┘  │
 └─────────────────────────────────────────┘
 ```
 
@@ -168,15 +169,15 @@ Guide 2.2 (Config avancée) → Guide 2.3 (IP fixe) → Guide 2.4 (Utilisateurs)
 │        Réseau Docker: postgres_net           │
 │            (172.20.0.0/16)                   │
 │                                              │
-│  ┌────────────────────┐  ┌────────────────┐ │
-│  │   postgres_db      │  │   app_backend  │ │
-│  │   172.20.0.10:5432│←─│   172.20.0.20  │ │
-│  └────────────────────┘  └────────────────┘ │
+│  ┌────────────────────┐  ┌────────────────┐  │
+│  │   postgres_db      │  │   app_backend  │  │
+│  │   172.20.0.10:5432│←─│   172.20.0.20   │  │
+│  └────────────────────┘  └────────────────┘  │
 │            ↕                                 │
-│  ┌────────────────────┐                     │
-│  │     pgadmin        │                     │
-│  │   172.20.0.30      │                     │
-│  └────────────────────┘                     │
+│  ┌────────────────────┐                      │
+│  │     pgadmin        │                      │
+│  │   172.20.0.30      │                      │
+│  └────────────────────┘                      │
 └──────────────────────────────────────────────┘
          ↕
    Hôte (5432, 8080)
