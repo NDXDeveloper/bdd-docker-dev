@@ -275,9 +275,9 @@ Vous verrez une interface web avec :
 │  [Execute Query]                    │
 ├─────────────────────────────────────┤
 │ Results:                            │
-│  id | titre        | auteur        │
-│  1  | 1984         | G. Orwell     │
-│  2  | Petit Prince | Saint-Exupéry │
+│  id | titre        | auteur         │
+│  1  | 1984         | G. Orwell      │
+│  2  | Petit Prince | Saint-Exupéry  │
 └─────────────────────────────────────┘
 ```
 
@@ -365,7 +365,7 @@ command: [
 │ ☐ Open database in read only mode     │
 │ ☐ Enable shared cache                 │
 │                                        │
-│ [Test Connection]  [Finish]  [Cancel] │
+│ [Test Connection]  [Finish]  [Cancel]  │
 └────────────────────────────────────────┘
 ```
 
