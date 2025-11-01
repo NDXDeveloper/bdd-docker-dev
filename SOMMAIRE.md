@@ -35,6 +35,13 @@
 - 4.2 [SQLite avec volume persistant](04-sqlite/02-sqlite-volume-persistant.md)
 - 4.3 [Outils graphiques (SQLite Browser)](04-sqlite/03-outils-graphiques.md)
 
+### 12. [Firebird](12-firebird/README.md)
+- 12.1 [Configuration basique avec docker-compose](12-firebird/01-config-basique-docker-compose.md)
+- 12.2 [Configuration avancée avec firebird.conf](12-firebird/02-config-avec-firebird-conf.md)
+- 12.3 [Configuration avec IP fixe](12-firebird/03-config-ip-fixe.md)
+- 12.4 [Gestion des utilisateurs et sécurité](12-firebird/04-gestion-utilisateurs.md)
+- 12.5 [Accès depuis le réseau local](12-firebird/05-acces-reseau-local.md)
+
 ---
 
 ## 🔥 Bases de Données NoSQL

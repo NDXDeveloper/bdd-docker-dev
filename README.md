@@ -2,10 +2,10 @@
 
 ![License](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)
 ![Docker](https://img.shields.io/badge/Docker-20.10%2B-blue.svg)
-![Databases](https://img.shields.io/badge/Bases-12%20BDD-green.svg)
+![Databases](https://img.shields.io/badge/Bases-13%20BDD-green.svg)
 ![Language](https://img.shields.io/badge/Langue-Français-blue.svg)
 
-**Guide complet pour déployer et configurer rapidement vos bases de données de développement avec Docker.**
+**Guide pour déployer et configurer rapidement vos bases de données de développement avec Docker.**
 
 ![Docker Logo](https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png)
 
@@ -30,7 +30,7 @@
 **La solution :** Docker ! Ce guide vous fournit des configurations prêtes à l'emploi pour démarrer n'importe quelle base de données en quelques secondes, avec des environnements isolés et reproductibles.
 
 **✨ Points clés :**
-- 🗄️ **12 bases de données** (SQL et NoSQL)
+- 🗄️ **13 bases de données** (SQL et NoSQL)
 - ⚡ **Installation en < 5 minutes** par BDD
 - 🔧 **Multiples configurations** (basique, IP fixe, avec GUI)
 - 🔐 **Gestion des utilisateurs** et permissions
@@ -52,6 +52,7 @@
 | 🐘 **PostgreSQL** | 15+ | 5 | BDD relationnelle avancée |
 | 🔷 **MS SQL Server** | 2022 | 4 | Environnements .NET |
 | 📦 **SQLite** | 3.x | 3 | BDD embarquée légère |
+| 🔥 **Firebird** | 4.x | 5 | Applications Delphi/Pascal, embedded |
 
 ### NoSQL
 | Base | Type | Fiches | Use Case Principal |
@@ -64,7 +65,7 @@
 | ⚡ **DynamoDB** | Document | 4 | Compatible AWS |
 | 🔍 **Elasticsearch** | Recherche | 4 | Moteur de recherche |
 
-**Total : 48 fiches de configuration** couvrant tous les cas d'usage !
+**Total : 53 fiches de configuration** couvrant tous les cas d'usage !
 
 ---
 
@@ -182,6 +183,7 @@ bdd-docker-dev/
 ├── 09-influxdb/                 # 4 fiches InfluxDB
 ├── 10-dynamodb/                 # 4 fiches DynamoDB
 ├── 11-elasticsearch/            # 4 fiches Elasticsearch
+├── 12-firebird/                 # 5 fiches Firebird
 │
 ├── annexes/                     # 7 annexes de référence
 │   ├── A-reference-commandes.md
@@ -233,6 +235,13 @@ docker-compose up -d  # MongoDB pour NoSQL
 # Reproductibilité garantie
 ```
 
+### 🔥 Développeur Delphi/Pascal
+```bash
+# Migrer des applications legacy vers Docker
+# Firebird en conteneur pour dev/test
+# Voir : 12-firebird/
+```
+
 ---
 
 ## ⚡ Commandes essentielles
@@ -272,15 +281,15 @@ docker volume ls
 
 ## 🎨 Fonctionnalités par BDD
 
-| Fonctionnalité | MariaDB | PostgreSQL | MongoDB | Redis | Neo4j | Autres |
-|----------------|---------|------------|---------|-------|-------|--------|
-| ✅ Config basique | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 🔧 Config avancée | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 🌐 IP fixe | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 👥 Gestion users | ✅ | ✅ | ✅ | ✅ | ✅ | Selon BDD |
-| 🖥️ Interface GUI | phpMyAdmin | pgAdmin | Mongo Express | Redis Commander | Browser | Selon BDD |
-| 🔄 Réplication | ❌ | ❌ | ✅ | ❌ | ❌ | Selon BDD |
-| 📦 Cluster | ❌ | ❌ | ❌ | ❌ | ❌ | Cassandra, Elastic |
+| Fonctionnalité | MariaDB | PostgreSQL | MongoDB | Redis | Neo4j | Firebird | Autres |
+|----------------|---------|------------|---------|-------|-------|----------|--------|
+| ✅ Config basique | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 🔧 Config avancée | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 🌐 IP fixe | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 👥 Gestion users | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Selon BDD |
+| 🖥️ Interface GUI | phpMyAdmin | pgAdmin | Mongo Express | Redis Commander | Browser | FlameRobin | Selon BDD |
+| 🔄 Réplication | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | Selon BDD |
+| 📦 Cluster | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | Cassandra, Elastic |
 
 ---
 
@@ -304,6 +313,9 @@ R : Utilisez des fichiers `.env`. Voir [Annexe D](annexes/D-securite-bonnes-prat
 **Q : Problème de connexion depuis un client ?**
 R : Vérifiez ports, mots de passe, permissions. Voir [Annexe E](annexes/E-depannage.md).
 
+**Q : Firebird fonctionne-t-il bien dans Docker ?**
+R : Oui ! Parfait pour dev/test. Utilisez le mode embedded pour les applications desktop.
+
 ---
 
 ## 🛡️ Sécurité
@@ -324,7 +336,7 @@ R : Vérifiez ports, mots de passe, permissions. Voir [Annexe E](annexes/E-depan
 
 ## 🗺️ Roadmap
 
-- ✅ 12 bases de données couvertes
+- ✅ 13 bases de données couvertes
 - ✅ Configurations multiples par BDD
 - ✅ 7 annexes de référence
 - ✅ 5 cas pratiques
@@ -375,6 +387,6 @@ Merci à la communauté Docker, aux mainteneurs des images officielles, et à to
 
 **[⬆ Retour en haut](#-bases-de-données-avec-docker-pour-développeurs)**
 
-*Dernière mise à jour : Octobre 2025*
+*Dernière mise à jour : Novembre 2025*
 
 </div>
